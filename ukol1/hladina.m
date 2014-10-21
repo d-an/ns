@@ -1,4 +1,4 @@
-function sinus(odkud, vyska, tlumeni)
+function hladina(odkud, vyska, tlumeni)
 x = -odkud:.05:odkud;
 % nasledne vytvorime sit, na ktere se bude pocitat vyska hladiny:
 [X,Y]=meshgrid(x);
