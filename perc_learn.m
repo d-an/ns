@@ -1,4 +1,4 @@
-function [p,n] = perc_learn(p,x,c,lam,maxit)
+function [p, n] = perc_learn(p,x,c,lam,maxit)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
     for n=1:maxit
@@ -8,6 +8,5 @@ function [p,n] = perc_learn(p,x,c,lam,maxit)
            p = perc_update(p,x,c,lam);
        end
     end
-
 end
 
