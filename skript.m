@@ -7,7 +7,7 @@ Par2 = {[1 1 -1], 1, 100};
 %porovnani perceptronoveho algoritmu pro 10 a 100 epoch:
 [d,s] = CrossVal('PLearn', 'PRecall', Par1, 'PLearn', 'PRecall', Par2, In, c, 5)
 
-t = tinv(0.975, 5-1);
+t = tinv(0.975, 4);
 
 % 95% interval spolehlivosti pro rozdil chyby:
 [d-s*t, d+s*t]
@@ -19,6 +19,9 @@ c = In(1,:)-3*In(2,:)+2*In(3,:)-In(4,:)>=0;
 Par3 = {[1 1 1 1 -1], 1, 40};
 %%
 [d,s] = CrossVal('PLearn', 'PRecall', Par3, 'Memorizer', 'MemorizerRecall', Par3, In, c, 6)
-t = tinv(0.975, 6-1)
+t = tinv(0.975, 5)
+
+% 95% interval spolehlivosti pro rozdil chyby:
+[d-s*t, d+s*t]
 
 %%

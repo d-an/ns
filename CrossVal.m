@@ -10,8 +10,7 @@ function [ delta, s] = CrossVal( Name1, Name1L, Par1, Name2, Name2L, Par2, Pat, 
     indx(2,k)=n;
     err = zeros(k,2); %do err ulozime chyby, az je budeme mit
 %%
-    % rozdelim data na trenovaci a testovaci (Pat1 je trenovaci, Pat2 je
-    % testovaci):
+    % rozdelim data na trenovaci a testovaci: 
 for i=1:k
     
     if i==1
@@ -19,7 +18,7 @@ for i=1:k
         DOut_train= DOut(indx(1,2):indx(2,k));
         Pat_test = Pat(:,indx(1,1):indx(2,1));
         DOut_test= DOut(indx(1,1):indx(2,1));
-        n_test = indx(2,1)-indx(1,1)+1; %pro pozdejsi deleni pocet spatne klasifikovanych poctem testovacich dat
+        n_test = indx(2,1)-indx(1,1)+1; %pro pozdejsi deleni poctu spatne klasifikovanych poctem testovacich dat
         
     elseif i==k
         Pat_train = Pat(:,indx(1,1):indx(2,k-1));
@@ -50,7 +49,7 @@ for i=1:k
 end
 %spocteme rozdily chyb:
 err = err(:,1)-err(:,2);
-%vratime prumerny rozdil chyb a smerodatnou odchylku:
+%vratime prumerny rozdil chyb a odchylku:
 delta = mean(err); 
 s = sqrt(sum((err-delta).^2)/(k*(k-1)));
 %%
