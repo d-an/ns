@@ -23,7 +23,7 @@ y_h_rozs = [y_h; 1];
 y_o = w_h_ob*[y_h; 1]; %2.0459, ma byt ale 0.2
 
 %%
-delta_o = (desired - y_o)*alpha*y*(1-y_o);
+delta_o = (desired - y)*alpha*y*(1-y);
 %%
 w_h_ob_2 = w_h_ob + alpha*delta_o.*y_h_rozs'; % nove vahy ze skryte do vystupni vrstvy
 %%
@@ -35,4 +35,4 @@ w_i_hb_2 = w_i_hb + alpha*[p2_rozs'; p2_rozs'].*[delta_h(1:2) delta_h(1:2) delta
 % nyni spocitejme vystup site s pouzitim techto aktualizovanych vah:
 y_h_2 = logsig(w_i_hb_2*p2_rozs); %vystup skryte vrstvy
 y_h_2_rozs = [y_h_2; 1];
-y_o_2 = w_h_ob_2*[y_h_2; 1]; 
+y_o_2 = w_h_ob_2*[y_h_2; 1]; %2.0459, ma byt ale 0.2
